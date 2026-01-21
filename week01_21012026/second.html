@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An amazing HTML showcase without CSS or JS">
+    <meta name="keywords" content="HTML, elements, attributes, hyperlinks, formatting, images, tables, lists, frames, forms, multimedia">
+    <title>Amazing HTML Showcase</title>
+</head>
+<body>
+    <h1>Welcome to the Amazing HTML Showcase</h1>
+    <p>This page demonstrates various HTML elements and attributes without using any CSS or JavaScript. It's all pure HTML magic!</p>
+
+    <h2>Hyperlinks</h2>
+    <p>Check out these links:</p>
+    <ul>
+        <li><a href="first.html" target="_blank">Link to First Page</a></li>
+        <li><a href="https://www.google.com" target="_blank">External Link to Google</a></li>
+        <li><a href="#tables">Jump to Tables Section</a></li>
+        <li><a href="mailto:example@example.com">Send Email</a></li>
+    </ul>
+
+    <h2>Formatting</h2>
+    <p>This is <b>bold</b>, <i>italic</i>, <u>underlined</u>, <strong>strong</strong>, <em>emphasized</em>, <mark>marked</mark>, <small>small</small>, <del>deleted</del>, <ins>inserted</ins>, <sub>subscript</sub>, <sup>superscript</sup> text.</p>
+    <p><abbr title="HyperText Markup Language">HTML</abbr> is awesome!</p>
+    <blockquote cite="https://www.w3.org/TR/html5/">
+        HTML5 is the latest evolution of the standard that defines HTML.
+    </blockquote>
+    <p>Code example: <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code></p>
+    <pre>
+        This is preformatted text.
+        It preserves    spaces and
+        line breaks.
+    </pre>
+
+    <h2>Images</h2>
+    <img src="https://via.placeholder.com/300x200?text=Sample+Image" alt="Sample Image" width="300" height="200">
+    <br>
+    <img src="https://via.placeholder.com/150x150?text=Icon" alt="Icon" usemap="#imagemap">
+    <map name="imagemap">
+        <area shape="rect" coords="0,0,75,75" href="#top" alt="Top">
+        <area shape="rect" coords="75,75,150,150" href="#bottom" alt="Bottom">
+    </map>
+
+    <h2>Tables</h2>
+    <table border="1">
+        <caption>Sample Data Table</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>25</td>
+                <td>London</td>
+            </tr>
+            <tr>
+                <td>Bob Johnson</td>
+                <td>35</td>
+                <td>Tokyo</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total: 3 people</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>Lists</h2>
+    <h3>Unordered List</h3>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry
+            <ul>
+                <li>Red Cherry</li>
+                <li>Black Cherry</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol type="I">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item
+            <ol type="a">
+                <li>Sub item 1</li>
+                <li>Sub item 2</li>
+            </ol>
+        </li>
+    </ol>
+
+    <h3>Description List</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        <dt>JS</dt>
+        <dd>JavaScript</dd>
+    </dl>
+
+    <h2>Frames</h2>
+    <iframe src="first.html" width="400" height="300" title="Embedded First Page"></iframe>
+
+    <h2>Forms</h2>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Contact Form</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+            
+            <label for="gender">Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+            
+            <label for="interests">Interests:</label><br>
+            <input type="checkbox" id="html" name="interests" value="html">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="css" name="interests" value="css">
+            <label for="css">CSS</label><br>
+            <input type="checkbox" id="js" name="interests" value="js">
+            <label for="js">JavaScript</label><br><br>
+            
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="japan">Japan</option>
+            </select><br><br>
+            
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
+
+    <h2>Multimedia</h2>
+    <h3>Audio</h3>
+    <audio controls>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h3>Video</h3>
+    <video width="320" height="240" controls>
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Advanced HTML Tags</h2>
+    <h3>Details and Summary</h3>
+    <details>
+        <summary>Click to expand</summary>
+        <p>This is hidden content that can be revealed by clicking the summary.</p>
+    </details>
+
+    <h3>Progress</h3>
+    <p>Task completion: <progress value="70" max="100">70%</progress></p>
+
+    <h3>Meter</h3>
+    <p>Storage usage: <meter value="0.8" min="0" max="1" low="0.3" high="0.7" optimum="0.5">80%</meter></p>
+
+    <h3>SVG Graphics</h3>
+    <svg width="200" height="200">
+        <circle cx="100" cy="100" r="50" fill="red" />
+        <rect x="50" y="50" width="100" height="100" fill="blue" />
+    </svg>
+
+    <h3>Canvas (Blank, as no JS)</h3>
+    <canvas width="200" height="100" style="border:1px solid #000000;"></canvas>
+
+    <h3>Time and Date</h3>
+    <p>The current date is <time datetime="2026-01-21">January 21, 2026</time>.</p>
+
+    <h3>Output</h3>
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" id="a" value="50"> +
+        <input type="number" id="b" value="25"> =
+        <output name="result" for="a b">75</output>
+    </form>
+
+    <h3>Dialog (Note: Requires JS to open, but here's the tag)</h3>
+    <dialog open>
+        <p>This is a dialog box.</p>
+        <button>Close</button>
+    </dialog>
+
+    <hr>
+    <p><small>&copy; 2026 Amazing HTML Showcase. All rights reserved.</small></p>
+</body>
+</html>
