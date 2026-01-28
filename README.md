@@ -10,8 +10,8 @@
 - Using GitHub Codespaces for development
 
 ### Description
-###In this week, we learned the basics of HTML tags and how to create a simple HTML page.  
-We were also introduced to GitHub, including creating a repository and using GitHub Codespaces to write and manage code online.
+<p>In this week, we learned the basics of HTML tags and how to create a simple HTML page.  
+We were also introduced to GitHub, including creating a repository and using GitHub Codespaces to write and manage code online.</p>
 ---
 
 ## Week 02 – Multi-page Website with CSS Styling
