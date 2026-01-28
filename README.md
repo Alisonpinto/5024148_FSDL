@@ -9,7 +9,7 @@
 - Creating and using a Git repository
 - Using GitHub Codespaces for development
 
-### Description
+# Description
 In this week, we learned the basics of HTML tags and how to create a simple HTML page.  
 We were also introduced to GitHub, including creating a repository and using GitHub Codespaces to write and manage code online.
 ---
