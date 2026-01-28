@@ -1,0 +1,156 @@
+/* ---------- Global Reset & Body ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e1f4fa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ---------- Headings ---------- */
+h1 {
+    color: #003366;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #555;
+    font-style: italic;
+}
+
+h2 {
+    color: #004080;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* CSS3 pseudo-element */
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #004080;
+    margin-top: 5px;
+}
+
+/* ---------- Tables ---------- */
+table {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table td, table th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* CSS3 nth-child selector */
+table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+table th {
+    background-color: #004080;
+    color: white;
+}
+
+/* ---------- Navigation Bar ---------- */
+a {
+    text-decoration: none;
+    color: #004080;
+    font-weight: bold;
+}
+
+/* pseudo-class */
+a:hover {
+    color: white;
+    background-color: #004080;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* ---------- Lists ---------- */
+ul {
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* pseudo-element */
+ul li::marker {
+    color: #004080;
+}
+
+/* ---------- Forms ---------- */
+input[type="text"],
+input[type="email"],
+select {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+/* pseudo-class */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #004080;
+}
+
+/* Buttons */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* pseudo-class */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #002b55;
+}
+
+/* ---------- Media Elements ---------- */
+img {
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+iframe,
+audio {
+    border-radius: 6px;
+}
+
+/* ---------- Footer ---------- */
+hr {
+    border: none;
+    height: 2px;
+    background: #004080;
+}
+
+p {
+    margin: 6px 0;
+}
+
+/* ---------- CSS3 Attribute Selector ---------- */
+a[href^="#"] {
+    text-transform: uppercase;
+    font-size: 14px;
+}
