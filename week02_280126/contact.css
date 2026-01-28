@@ -1,0 +1,17 @@
+body {
+    background-color: #EFEFEF;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #1a4d8f;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+table {
+    background-color: #ffffff;
+}

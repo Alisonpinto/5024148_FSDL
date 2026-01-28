@@ -1,0 +1,17 @@
+body {
+    background-color: #EFEFEF;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #1a4d8f;
+}
+
+iframe {
+    border: 2px solid #ccc;
+}
+
+img {
+    margin-top: 20px;
+    border-radius: 6px;
+}
