@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Internal CSS Practical</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+header {
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  margin: 20px auto;
+  max-width: 600px;
+  color: #555;
+}
+
+.hero button {
+  padding: 15px 40px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.section {
+  padding: 80px 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+footer {
+  background: #020617;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav>
+    <h2>WebNova</h2>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Internal CSS Website</h1>
+  <p>A full website using internal CSS styling.</p>
+  <button>Explore</button>
+</section>
+
+<section class="section">
+  <div class="cards">
+    <div class="card">
+      <h3>Responsive</h3>
+      <p>Works on all screen sizes.</p>
+    </div>
+    <div class="card">
+      <h3>Animated</h3>
+      <p>Smooth hover effects.</p>
+    </div>
+    <div class="card">
+      <h3>Clean</h3>
+      <p>Simple & readable code.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 WebNova | Internal CSS Practical
+</footer>
+
+</body>
+</html>
