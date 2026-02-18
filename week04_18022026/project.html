@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Form</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background-color: #c7c19f; /* beige background like image */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .contact-box {
+        width: 600px;
+        background: #f3f3f3;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-box h2 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .contact-box p {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .form-control, .form-select {
+        background: #e9e9e9;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .form-control:focus, .form-select:focus {
+        box-shadow: none;
+        background: #e0e0e0;
+    }
+
+    .btn-dark-custom {
+        background-color: #333;
+        color: white;
+        border-radius: 8px;
+        padding: 10px 25px;
+        border: none;
+    }
+
+    .btn-pink {
+        background-color: #ff2f86;
+        color: white;
+        border-radius: 8px;
+        padding: 10px 25px;
+        border: none;
+    }
+
+    .btn-pink:hover {
+        background-color: #e22673;
+    }
+</style>
+</head>
+<body>
+
+<div class="contact-box">
+    <h2>Contact Form</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <form id="contactForm">
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" id="subject" required>
+                <option value="">Choose Subject</option>
+                <option>General Inquiry</option>
+                <option>Support</option>
+                <option>Business</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn-dark-custom">BACK TO HOME</button>
+            <button type="submit" class="btn-pink">SUBMIT NOW</button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+
+class Contact {
+    constructor(name, email, subject, message) {
+        this.name = name;
+        this.email = email;
+        this.subject = subject;
+        this.message = message;
+    }
+
+    printData() {
+        console.log("----- Contact Data -----");
+        console.log("Name:", this.name);
+        console.log("Email:", this.email);
+        console.log("Subject:", this.subject);
+        console.log("Message:", this.message);
+    }
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    if(name === "" || email === "" || subject === "" || message === ""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    let userContact = new Contact(name, email, subject, message);
+    userContact.printData();
+
+    alert("Form Submitted Successfully");
+    this.reset();
+});
+
+</script>
+
+</body>
+</html>
