@@ -36,7 +36,7 @@ function PomodoroTimer() {
       .padStart(2, '0')}:${(t % 60).toString().padStart(2, '0')}`
 
   return (
-    <div className="pomodoro">
+    <div className={`pomodoro ${mode}`}> {/* add mode class for styling */}
       <h2>{mode === 'work' ? 'Work' : 'Break'} Timer</h2>
       <div className="time">{formatTime(timeLeft)}</div>
       <button onClick={() => setRunning((r) => !r)}>
