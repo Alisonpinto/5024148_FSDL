@@ -1,0 +1,12 @@
+.contact {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  text-align: left;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}

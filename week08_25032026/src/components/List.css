@@ -1,0 +1,64 @@
+.list-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-item {
+  margin-bottom: 2rem;
+}
+
+.add-item input {
+  padding: 0.5rem;
+  width: 70%;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-item button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-item button:hover {
+  background-color: #0056b3;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+.item.completed {
+  background-color: #d4edda;
+  text-decoration: line-through;
+}
+
+.toggle-btn {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #e0a800;
+}
