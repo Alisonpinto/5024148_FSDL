@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+    <title>Validation + Student App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="studentCtrl">
+
+    <h2>Student Form</h2>
+
+    <form name="studentForm">
+
+        Name:
+        <input type="text" ng-model="student.name" required>
+        <span style="color:red" ng-show="studentForm.$submitted && studentForm.name.$error.required">
+            Name required
+        </span>
+        <br><br>
+
+        Age:
+        <input type="number" ng-model="student.age" min="1" required>
+        <br><br>
+
+        Email:
+        <input type="email" ng-model="student.email" required>
+        <span style="color:red" ng-show="studentForm.$submitted && studentForm.email.$invalid">
+            Invalid Email
+        </span>
+        <br><br>
+
+        <button ng-click="addStudent()">Add Student</button>
+
+    </form>
+
+    <h3>Student List</h3>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+
+        <tr ng-repeat="s in students">
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.email}}</td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module("studentApp", []);
+
+        app.controller("studentCtrl", function($scope) {
+            $scope.students = [];
+
+            $scope.addStudent = function() {
+                $scope.students.push({
+                    name: $scope.student.name,
+                    age: $scope.student.age,
+                    email: $scope.student.email
+                });
+
+                $scope.student = {};
+            };
+        });
+    </script>
+
+</body>
+</html>

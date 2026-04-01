@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Controller & Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h2>AngularJS Events Example</h2>
+
+    <button ng-click="count = count + 1">Click Me</button>
+
+    <h3>You clicked {{count}} times</h3>
+
+    <br>
+
+    <button ng-click="showMessage()">Show Message</button>
+    <p>{{message}}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function($scope) {
+            $scope.count = 0;
+
+            $scope.showMessage = function() {
+                $scope.message = "Button Clicked Successfully!";
+            };
+        });
+    </script>
+
+</body>
+</html>

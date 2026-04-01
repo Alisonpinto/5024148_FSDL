@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fsdlApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSDL AngularJS Practical</title>
+  <!-- Simple styling for layout and readability -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f7fb;
+      color: #333;
+    }
+
+    h1, h2 {
+      color: #2a5d9f;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #dce3ef;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 4px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #cbd3e0;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #2a5d9f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #a1b3d6;
+      cursor: not-allowed;
+    }
+
+    .error {
+      color: #c53030;
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid #dce3ef;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #eef3fb;
+    }
+
+    .message {
+      margin-top: 12px;
+      padding: 10px;
+      background: #eef7e6;
+      border: 1px solid #bdd7aa;
+      border-radius: 4px;
+      color: #2f6627;
+    }
+  </style>
+</head>
+<body>
+  <!-- ng-controller binds this section to the controller logic -->
+  <div ng-controller="MainController as main">
+    <div class="card">
+      <h1>FSDL AngularJS Practical</h1>
+      <p>Welcome to the beginner-friendly AngularJS app.</p>
+    </div>
+
+    <!-- Hello World using ng-model and expression -->
+    <div class="card">
+      <h2>Hello World Feature</h2>
+      <label for="helloName">Enter your name</label>
+      <input id="helloName" type="text" ng-model="main.helloName" placeholder="Type your name" />
+      <p><strong>Hello {{ main.helloName || 'Guest' }}</strong></p>
+    </div>
+
+    <!-- Button click event with ng-click -->
+    <div class="card">
+      <h2>Button Event</h2>
+      <button type="button" ng-click="main.showClickMessage()">Click Me</button>
+      <div class="message" ng-show="main.buttonMessage">{{ main.buttonMessage }}</div>
+    </div>
+
+    <!-- Form validation section -->
+    <div class="card">
+      <h2>Form Validation</h2>
+      <form name="main.userForm" novalidate>
+        <label for="userName">Name</label>
+        <input id="userName" name="userName" type="text" ng-model="main.user.name" required ng-minlength="3" placeholder="Enter your name" />
+        <div class="error" ng-show="main.userForm.userName.$touched && main.userForm.userName.$invalid">
+          <div ng-show="main.userForm.userName.$error.required">Name is required.</div>
+          <div ng-show="main.userForm.userName.$error.minlength">Name must be at least 3 characters.</div>
+        </div>
+
+        <label for="userAge">Age</label>
+        <input id="userAge" name="userAge" type="number" ng-model="main.user.age" required min="1" max="120" placeholder="Enter your age" />
+        <div class="error" ng-show="main.userForm.userAge.$touched && main.userForm.userAge.$invalid">
+          <div ng-show="main.userForm.userAge.$error.required">Age is required.</div>
+          <div ng-show="main.userForm.userAge.$error.min || main.userForm.userAge.$error.max">Age must be between 1 and 120.</div>
+        </div>
+
+        <label for="userEmail">Email</label>
+        <input id="userEmail" name="userEmail" type="email" ng-model="main.user.email" required placeholder="Enter your email" />
+        <div class="error" ng-show="main.userForm.userEmail.$touched && main.userForm.userEmail.$invalid">
+          <div ng-show="main.userForm.userEmail.$error.required">Email is required.</div>
+          <div ng-show="main.userForm.userEmail.$error.email">Please enter a valid email address.</div>
+        </div>
+
+        <button type="button" ng-click="main.submitUserForm()" ng-disabled="main.userForm.$invalid">Submit Form</button>
+      </form>
+      <div class="message" ng-show="main.user.name || main.user.age || main.user.email">
+        <strong>Live Preview:</strong>
+        <p>Name: {{ main.user.name || '...' }}</p>
+        <p>Age: {{ main.user.age || '...' }}</p>
+        <p>Email: {{ main.user.email || '...' }}</p>
+      </div>
+    </div>
+
+    <!-- Student Record Application -->
+    <div class="card">
+      <h2>Student Record Application</h2>
+      <form name="main.studentForm" novalidate>
+        <p><strong>Total students:</strong> {{ main.students.length }}</p>
+        <p><strong>Courses:</strong> {{ main.courseSummary() }}</p>
+        <label for="studentName">Student Name</label>
+        <input id="studentName" name="studentName" type="text" ng-model="main.student.name" required ng-minlength="2" placeholder="Enter student name" />
+        <div class="error" ng-show="main.studentForm.studentName.$touched && main.studentForm.studentName.$invalid">
+          <div ng-show="main.studentForm.studentName.$error.required">Student name is required.</div>
+          <div ng-show="main.studentForm.studentName.$error.minlength">Student name must be at least 2 characters.</div>
+        </div>
+
+        <label for="studentAge">Student Age</label>
+        <input id="studentAge" name="studentAge" type="number" ng-model="main.student.age" required min="10" max="100" placeholder="Enter student age" />
+        <div class="error" ng-show="main.studentForm.studentAge.$touched && main.studentForm.studentAge.$invalid">
+          <div ng-show="main.studentForm.studentAge.$error.required">Student age is required.</div>
+          <div ng-show="main.studentForm.studentAge.$error.min || main.studentForm.studentAge.$error.max">Age must be between 10 and 100.</div>
+        </div>
+
+        <label for="studentCourse">Course</label>
+        <input id="studentCourse" name="studentCourse" type="text" ng-model="main.student.course" required placeholder="Enter course name" />
+        <div class="error" ng-show="main.studentForm.studentCourse.$touched && main.studentForm.studentCourse.$invalid">
+          <div ng-show="main.studentForm.studentCourse.$error.required">Course is required.</div>
+        </div>
+
+        <button type="button" ng-click="main.addStudent()" ng-disabled="main.studentForm.$invalid">Add Student</button>
+      </form>
+      <div class="message" ng-show="main.studentMessage">{{ main.studentMessage }}</div>
+
+      <table ng-show="main.students.length > 0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="student in main.students track by $index">
+            <td>{{ $index + 1 }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.course }}</td>
+            <td><button type="button" ng-click="main.deleteStudent($index)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="message" ng-show="main.students.length === 0">
+        No students added yet. Use the form above to add a student record.
+      </div>
+    </div>
+  </div>
+
+  <!-- AngularJS CDN for version 1.x -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script>
+    // Define the application module named 'fsdlApp'
+    angular.module('fsdlApp', [])
+      .controller('MainController', function() {
+        var vm = this;
+
+        // Model used by the Hello World input
+        vm.helloName = '';
+
+        // Message shown after button click
+        vm.buttonMessage = '';
+
+        // Form user data object
+        vm.user = {
+          name: '',
+          age: null,
+          email: ''
+        };
+
+        // Student record object bound to the student form
+        vm.student = {
+          name: '',
+          age: null,
+          course: ''
+        };
+
+        // Message shown after student actions
+        vm.studentMessage = '';
+
+        // Array that stores all student records
+        vm.students = [];
+
+        // Function called when the button is clicked
+        vm.showClickMessage = function() {
+          var time = new Date().toLocaleTimeString();
+          vm.buttonMessage = 'Button clicked at ' + time;
+        };
+
+        // Optional method to handle form submission logic
+        vm.submitUserForm = function() {
+          if (vm.userForm.$valid) {
+            alert('User form is valid! Name: ' + vm.user.name);
+          }
+        };
+
+        // Add a new student record to the students list
+        vm.addStudent = function() {
+          if (vm.studentForm.$valid) {
+            vm.students.push({
+              name: vm.student.name,
+              age: vm.student.age,
+              course: vm.student.course
+            });
+
+            // Clear the form fields after adding
+            vm.student.name = '';
+            vm.student.age = null;
+            vm.student.course = '';
+            vm.studentMessage = 'Student added successfully!';
+
+            // Reset form state if available
+            if (vm.studentForm.$setPristine) {
+              vm.studentForm.$setPristine();
+              vm.studentForm.$setUntouched();
+            }
+          }
+        };
+
+        // Delete a student record by index
+        vm.deleteStudent = function(index) {
+          vm.students.splice(index, 1);
+          vm.studentMessage = 'Student removed successfully!';
+        };
+
+        // Returns a readable list of courses from student records
+        vm.courseSummary = function() {
+          if (!vm.students.length) {
+            return 'None';
+          }
+          var courses = vm.students.map(function(student) {
+            return student.course;
+          });
+          return Array.from(new Set(courses)).join(', ');
+        };
+      });
+  </script>
+</body>
+</html>
