@@ -1,36 +1,17 @@
 # 5024148_FSDL
 
-## Week 01 – HTML Basics and Git Introduction
+## 📋 FSDL Practicals
 
-### Topics Covered
-- Introduction to HTML tags
-- Basic structure of an HTML document
-- Common HTML tags such as `<html>`, `<head>`, `<body>`, `<h1>`, `<p>`
-- Creating and using a Git repository
-- Using GitHub Codespaces for development
-
-### Description
-In this week, we learned the basics of HTML tags and how to create a simple HTML page.  
-We were also introduced to GitHub, including creating a repository and using GitHub Codespaces to write and manage code online.
----
-
-## Week 02 – Multi-page Website with CSS Styling
-
-### Topics Covered
-- Creating multi-page websites with HTML
-- Linking between pages using navigation menus
-- CSS styling and layout
-- Tables for page structure
-- Forms and input elements
-- Embedding media (images, videos, audio)
-
-### Description
-In this week, we built a complete multi-page website for Fr. Agnel College with the following pages:
-- **index.html** - Home page with welcome section, about us, programs, admission form, gallery, and contact info
-- **about.html** - About the college, vision, and mission
-- **programs.html** - Academic programs offered
-- **admission.html** - Admission enquiry form
-- **gallery.html** - Campus images and videos
-- **contact.html** - Contact information and office hours
-
-All pages are connected with a consistent navigation menu and styled using a shared CSS file (style.css) with modern formatting and layout.
+| Week | Practical |
+|------|----------|
+| Week 01 | Implement using HTML5: Elements, Attributes, Head, Body, Hyperlink, Formatting, Images, Tables, List, Frames, Form, Multimedia |
+| Week 02 | Implement using CSS3: Syntax, Inclusion, Color, Background, Fonts, Tables, Lists, CSS3 selectors, Pseudo classes, Pseudo elements |
+| Week 03 | Implement using Bootstrap: Grid system, Forms, Button, Navbar, Breadcrumb, Jumbotron |
+| Week 04 | Implement using JavaScript: Variables, Operators, Conditions, Loops, Functions, Events, Classes and Objects |
+| Week 05 | Implement using JavaScript: Error handling, Validations, Arrays, String, Date |
+| Week 06 | Implement using React: Installation and Configuration, JSX, Components, Props, State, Forms, Events |
+| Week 07 | Implement using React: Routers, Refs, Keys |
+| Week 08 | Create a simple HTML “Hello World” Project using AngularJS Framework and apply ng-controller, ng-model and expressions |
+| Week 09 | Events and Validations in AngularJS: Create functions, add events, add HTML records using Angular, and build a student record application |
+| Week 10 | Implement using Node.js: Installation, Configuration, Callbacks, Event Loop, Express App, MongoDB Application |
+| Week 11 | Implementation of Mini Project on selected case study |
